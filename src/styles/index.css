@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=IBM+Plex+Sans+Condensed:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* font-family: 'Courgette', cursive; */
 code {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
@@ -161,6 +161,25 @@ input {
     animation: Loading 1s linear infinite;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #818181;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #372C2E;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(45, 45, 45)C2E;
+}
 
 .BG {
     position: fixed;
@@ -168,8 +187,72 @@ input {
     width: 120%;
     top: -20vh;
     left: -20%;
+    z-index: -1;
     background-image: url('../images/wooden-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.main-header {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+}
+.main-header::after {
+    position: absolute;
+    content: '';
+    width: calc(100% - 400px);
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+}
+
+.main-header h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 400;
+}
+.main-header button {
+    position: relative;
+    height: 60px;
+    width: 300px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.main-header button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #372C2E;
+}
+
+.main-header button .username {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    font-size: 20px;
+}
+
+.main-header button .email {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.main-header button .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    display: flex;
+    font-size: 24px;
 }

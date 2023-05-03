@@ -19,6 +19,7 @@ function App() {
   return (
     <main className="App">
       <div className='BG'></div>
+      
     </main>
   );
 }
