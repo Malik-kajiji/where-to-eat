@@ -2,6 +2,19 @@ import React, { useState } from 'react';
 import '../styles/questions.css';
 
 const Questions = () => {
+    const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [answers, setAnswers] = useState(['', [], ''])
+
+
+    const handleNext = () => {
+        setCurrentQuestion((prevQuestion) => prevQuestion + 1)
+    }
+
+    const handleSubmit = (event) => {
+        // submit answers to connect to API???
+        event.preventDefault()
+        console.log(answers)
+    }
 
     const questions = [
         {
@@ -20,10 +33,10 @@ const Questions = () => {
         }
     ]
 
+
     return (
         <>
             <h1>we got a few questions</h1>
-            
         </>
     )
 }
