@@ -5,6 +5,22 @@ const Questions = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [answers, setAnswers] = useState(['', [], ''])
 
+    const handleAnswerChange = (event, index) => {
+        const { value, type, checked } = event.target
+        if (type === 'checkbox') {
+            setAnswers((prevAnswers) => {
+                const newAnswer = prevAnswers[index].includes(value)
+                ? prevAnswers[index].filter((item) => item !== value)
+                : [...prevAnswers[index], value]
+
+                return prevAnswers.map((item, i) => (i === index ? newAnswer : item))
+            })
+        } else {
+            setAnswers((prevAnswers) =>
+            prevAnswers.map((item, i) => (i === index ? value : item))
+            )
+        }
+    }
 
     const handleNext = () => {
         setCurrentQuestion((prevQuestion) => prevQuestion + 1)
@@ -33,6 +49,7 @@ const Questions = () => {
         }
     ]
 
+    const currentQuestionData = questions[currentQuestion]
 
     return (
         <>
