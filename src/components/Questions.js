@@ -54,6 +54,51 @@ const Questions = () => {
     return (
         <>
             <h1>we got a few questions</h1>
+            <form onSubmit={handleSubmit}>
+                <h2>{currentQuestionData.text}</h2>
+                {currentQuestionData.type === 'checkbox' &&
+                    currentQuestionData.options.map((option, index) => (
+                        <div key={index}>
+                            <input 
+                                type="checkbox"
+                                id={`${currentQuestion}-${index}`}
+                                name={`${currentQuestion}`}
+                                value={option}
+                                checked={answers[currentQuestion].includes(option)}
+                                onChange={(event) => handleAnswerChange(event, currentQuestion)}
+                            />
+                            <label htmlFor={`${currentQuestion}-${index}`}>{option}</label>
+                        </div>
+                    ))}
+                {currentQuestionData.type === 'radio' &&
+                    currentQuestionData.options.map((option, index) => (
+                        <div key={index}>
+                            <input 
+                                type="radio"
+                                id={`${currentQuestion}-${index}`}
+                                name={`${currentQuestion}`}
+                                value={option}
+                                checked={answers[currentQuestion].includes(option)}
+                                onChange={(event) => handleAnswerChange(event, currentQuestion)}
+                            />
+                            <label htmlFor={`${currentQuestion}-${index}`}>{option}</label>
+                        </div>
+                    ))}
+                {currentQuestionData.type === 'text' && (
+                    <input
+                        type='text'
+                        value={answers[currentQuestion]}
+                        placeholder='Manhattan, NY'
+                        onChange={(event) => handleAnswerChange(event, currentQuestion)}
+                    />
+                )}
+                {currentQuestion < questions.length - 1 && (
+                    <button type='button' onClick={handleNext}>next</button>
+                )}
+                {currentQuestion === questions.length - 1 && (
+                    <button type='submit'>submit</button>
+                )}
+            </form>
         </>
     )
 }
