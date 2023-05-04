@@ -34,9 +34,9 @@ const Questions = () => {
 
     const questions = [
         {
-            text: 'What are you craving?',
+            text: 'What cuisine are you craving?',
             type: 'checkbox',
-            options: ['Chinese', 'Indian', 'Italian', 'Middle Eastern']
+            options: ['Chinese', 'Indian', 'Italian', 'Korean', 'Spanish', 'Japanese']
         },
         {
             text: 'How long are you willing to travel?',
@@ -52,13 +52,13 @@ const Questions = () => {
     const currentQuestionData = questions[currentQuestion]
 
     return (
-        <>
+        <div className='questions'>
             <h1>we got a few questions</h1>
             <form onSubmit={handleSubmit}>
                 <h2>{currentQuestionData.text}</h2>
                 {currentQuestionData.type === 'checkbox' &&
                     currentQuestionData.options.map((option, index) => (
-                        <div key={index}>
+                        <div className='answers' key={index}>
                             <input 
                                 type="checkbox"
                                 id={`${currentQuestion}-${index}`}
@@ -72,7 +72,7 @@ const Questions = () => {
                     ))}
                 {currentQuestionData.type === 'radio' &&
                     currentQuestionData.options.map((option, index) => (
-                        <div key={index}>
+                        <div className='answers' key={index}>
                             <input 
                                 type="radio"
                                 id={`${currentQuestion}-${index}`}
@@ -99,7 +99,7 @@ const Questions = () => {
                     <button type='submit'>submit</button>
                 )}
             </form>
-        </>
+        </div>
     )
 }
 
