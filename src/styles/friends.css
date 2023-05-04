@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap');
+
+.friend-bar {
+  box-sizing: border-box;
+  position: absolute;
+  width: 57.5%;
+  height: 10%;
+  left: 21%;
+  top: 37%;
+  background: rgba(0, 0, 0, 0.44);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px; 
+}
+
+.friend-username {
+  position: absolute;
+  left: 2.5%;
+  top: -20%;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.friend-location {
+  position: absolute;
+  left: 2.5%;
+  top: 25%;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.pick-restaurant-button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26.8%;
+  height: 70%;
+  left: 72%;
+  top: 15%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+
+.pick-restaurant-text {
+  position: absolute;
+  left: 16%;
+  top: -20%;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+  transition: 0.1s;
+}
+
+.pick-restaurant-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.pick-restaurant-button:hover .pick-restaurant-text {
+  color: #372C2E;
+}
