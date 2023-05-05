@@ -1,17 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Friends = () => {
+const Friends = ({friends}) => {
     return (
-      <>
-        <div className="blur-background"></div>
-        <div className="friend-bar">
-          <p className="friend-username">Username</p>
-          <p className="friend-location">Lives at N/A</p>
-          <div className="pick-restaurant-button">
-            <p className="pick-restaurant-text">Pick a Restaurant</p>
+      <article className='friends'>
+        {friends.map((e,i)=>(
+          <div className="friend-bar" key={i}>
+            <p className="friend-username">{e.username}</p>
+            <p className="friend-location">Lives at {e.location}</p>
+            <Link to={`/chooes/${e.username}`}>
+              <div className="pick-restaurant-button">
+                <p className="pick-restaurant-text">pick a restaurant</p>
+              </div>
+            </Link>
           </div>
-        </div>
-      </>
+        ))
+        }
+      </article>
     )
 }
 

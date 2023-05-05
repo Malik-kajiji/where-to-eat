@@ -69,6 +69,13 @@
     font-weight: 200;
     font-size: 12px;
 }
+.restaurant .distance {
+    position: absolute;
+    bottom: 5px;
+    left: 420px;
+    font-weight: 200;
+    font-size: 12px;
+}
 .choosen {
     position: relative;
     height: 600px;

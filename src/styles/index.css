@@ -212,13 +212,13 @@ input {
     bottom: 0;
 }
 
-.main-header h2 {
+.main-header .header-h2 {
     font-family: 'Courgette', cursive;
     font-size: 28px;
     color: #fff;
     font-weight: 400;
 }
-.main-header button {
+.main-header .header-btn {
     position: relative;
     height: 60px;
     width: 300px;
@@ -228,19 +228,19 @@ input {
     color: #fff;
 }
 
-.main-header button:hover {
+.main-header .header-btn:hover {
     background-color: rgba(255, 255, 255, 1);
     color: #372C2E;
 }
 
-.main-header button .username {
+.main-header .header-btn .header-username {
     position: absolute;
     top: 5px;
     left: 30px;
     font-size: 20px;
 }
 
-.main-header button .email {
+.main-header .header-btn .header-email {
     position: absolute;
     bottom: 5px;
     left: 30px;
@@ -248,11 +248,20 @@ input {
     font-weight: 200;
 }
 
-.main-header button .icon {
+.main-header .header-btn .header-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 30px;
     display: flex;
     font-size: 24px;
+}
+
+.loading {
+    position: fixed;
+    font-size: 54px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
 }

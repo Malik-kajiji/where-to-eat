@@ -10,10 +10,10 @@ import '../styles/account.css';
 
 const Account = () => {
     return (
-        <section>
+        <section className='account'>
             <Router>
                 <header className='logo'>
-                    
+                    <h2>where to eat ?</h2>
                 </header>
                 <Routes>
                     <Route 
